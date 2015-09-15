@@ -14,6 +14,7 @@ script, asnum = argv
 url = 'https://beta.peeringdb.com/api/asn/%s' % asnum
 obj = urllib2.urlopen(url)
 raw = json.load(obj)
+self = 16
 
 for x in raw["data"]:
   maxprefixv4 = x[u'info_prefixes4']
@@ -23,7 +24,7 @@ for x in raw["data"]:
   org_id = x [u"org_id"]
 
 for item in raw["data"] [0] ["ixlink_set"]:
-        if item["ixlan_id"] == 16:
+        if item["ixlan_id"] == self:
                 ipaddr4 = item[u"ipaddr4"]
                 ipaddr6 = item[u"ipaddr6"]
 
