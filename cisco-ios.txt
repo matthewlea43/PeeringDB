@@ -1,0 +1,23 @@
+
+!
+ router bgp 51551
+ !
+ neighbor $ipaddr4 remote-as $asn
+ neighbor $ipaddr4 peer-group LINX-IXP-IPV4
+ neighbor $ipaddr4 description $name
+ neighbor $ipaddr6 remote-asasn
+ neighbor $ipaddr6 peer-group LINX-IXP-IPV4
+ neighbor $ipaddr6 description $name
+ !
+ address-family ipv4
+ neighbor $ipaddr4 activate
+ neighbor $ipaddr4 inherit peer-policy LINX-IXP-IPV4
+ neighbor $ipaddr4 maximum-prefix $maxprefixv4
+ neighbor $ipaddr4 description $name
+ !
+ address-family ipv6
+ neighbor $ipaddr6 activate
+ neighbor $ipaddr6 inherit peer-policy LINX-IXP-IPV6
+ neighbor $ipaddr6 maximum-prefix $maxprefixv6
+ neighbor $ipaddr6 description $name
+ !
