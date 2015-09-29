@@ -25,7 +25,7 @@ for item in raw["data"]:
     asn = item[u'asn']
     org_id = item[u"org_id"]
 
-for item in raw["data"] [0] ["ixlink_set"]:
+for item in raw["data"] [0] ["netixlan_set"]:
         if item["ixlan_id"] == self:
                 ipaddr4 = item[u"ipaddr4"]
                 ipaddr6 = item[u"ipaddr6"]
